@@ -8,29 +8,35 @@ body{
     padding: 0;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(238, 238, 238);
 }
 
-h1{
-    text-align: center;
-    font-size: 3rem;
-}
 
-main{
-    display: flex;
-    flex-flow: row wrap; /* Serve para que os cards fiquem em linha */
+header{
+    display: flex; /* É usado para transformar um elemento em um "flex container", permitindo que você manipule os seus filhos de forma flexível, controlando o layout e alinhamento dentro do container*/
+    flex-flow: row wrap; /* Coloca o conteúdo em linha e não permite a quebra de linha */
     width: 90%;
     margin: auto auto;
-    align-items: center;
+    align-items: center; /* Alinha os cards no centro verticalmente */
+}
+header > h1{
+    margin: auto auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 3rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.379);
 }
 
-main > input{
+header > input{
     height: 120px;
     width: 80%;
     font-size: 2rem;
     padding-left: 10%;
+    border: 1px solid black;
     
 }
-main > button{
+
+#btnAdd{
     height: 120px;
     width: 20%;
     cursor: pointer;
@@ -39,7 +45,78 @@ main > button{
     font-weight: bolder;
     font-size: 1.5rem;
     border: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.379);
 }
-main > button:hover{
+
+#btnAdd:hover{
     background-color: darkgreen;
+}
+
+#btnDel{
+    height: 80px;
+    width: 100%;
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    
+}
+#btnDel:hover{
+    background-color: rgb(181, 0, 0);
+}
+
+main{
+    display: flex;
+    flex-flow: row wrap; 
+    width: 90%;
+    margin: auto auto;
+    padding-top: 40px;
+}
+
+#tarefas{
+    display: flex; 
+    flex-flow: row wrap; 
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    align-items: center; 
+    justify-content: center; /* Alinha os cards no centro horizontalmente*/
+    box-shadow: 0 0 20px #ccc;
+    margin-bottom: 2%;
+
+}
+#tarefaClick{
+    display: flex; 
+    flex-flow: row wrap; 
+    width: 100%;
+    height: 80px;
+    background-color: rgb(186, 236, 186);
+    align-items: center; 
+    justify-content: center;
+    box-shadow: 0 0 20px #ccc;
+    margin-bottom: 2%;
+}
+
+#tarefaClick #itemNome{
+    text-decoration: line-through;
+    color: rgb(105, 105, 105);
+}
+
+#itemIcone{
+    flex: 20%; 
+    font-size: 20px;
+    text-align: center;
+}
+
+#itemNome{
+    flex: 55%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#itemBotao{
+    flex: 25%;
+    
 }
